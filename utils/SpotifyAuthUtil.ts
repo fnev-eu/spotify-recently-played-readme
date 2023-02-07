@@ -49,7 +49,7 @@ export async function getUsername(accessToken: string): Promise<string> {
             Authorization: `Bearer ${accessToken}`,
         },
     });
-    return result.data.id;
+    return result.data.id.replace('.', '--dot--');
 }
 
 export async function getRecentlyPlayed(limit: number, accessToken: string): Promise<PlayHistory[]> {
